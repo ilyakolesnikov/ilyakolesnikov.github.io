@@ -1,0 +1,414 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {	
+	font-family: 'Roboto Condensed','Lora', sans-serif; 	 
+	text-align: center;
+	min-width: 320px;	
+	background-color: #efefef; /*#F5F2FA*/
+}
+
+#fullpage {
+
+}
+
+#indicator {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 3;
+	color: black;
+}
+
+/* --- Навигационная панель --- */
+#navbar {
+	top: 0px;
+	position: fixed;
+	width: 100%;
+	background-color: #CFF09E;	
+	z-index: 2;		
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.navHref {
+	margin-left: 20px;
+	margin-right: 20px;
+	top: 0;
+	bottom: 0; 
+	vertical-align: middle;	
+	color: #999;/*#BEB8C7;*/
+}
+
+.active, .navHref:hover{
+	color: #3B8686;
+}
+
+.material-icons {
+	font-size: 36pt;
+}
+
+
+/* --- Контент --- */
+
+.anchor {
+	display: block;
+	visibility: hidden;
+}
+
+section {
+	min-height: 100%;	
+}
+
+.slide {
+	min-height: 100%;
+}
+
+.content {
+	margin: 0 auto;
+	padding-bottom: 20px;
+	width: 75%;	
+	max-width: 1020px;
+	font-size: 0; /*Убираем отступы у блоков projectBlock*/	
+	/*min-height: 100vh*/; 
+}
+
+
+h3 {
+	font-size: 24pt;
+	text-align: left;
+	padding-top: 1.5em;
+	padding-bottom: 0.5em;
+	color: #413A4C; /*#514E56;*/
+}
+
+p, ul {
+	font-size: 18pt;	
+	text-align: left;
+	color: #555; /*#514E56;*/	
+}
+
+#bgProjects {
+	background: #3B8686;
+	width: 100%;	
+}
+
+#bgProjects p, #bgProjects h3 {
+	color: white;	
+}
+
+#bgContacts {
+	width: 100%;
+	
+}
+
+/* --- Блоки проектов --- */
+
+.projectBlock {
+	background-color: #0B486B;
+	width: 500px;
+	height: 400px;	
+	margin: 5px 5px 5px 5px;	
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	
+	-moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.projectBlock:hover {
+	background-color: #0B486B;
+	cursor:pointer;
+	
+	
+}
+
+.imgBlock {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 400px;
+		
+	-moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    
+}
+
+.imgBlock img {
+	display: inline-block;
+	max-height: 93%;
+    max-width: 95%;    
+    vertical-align: middle;    
+}
+
+.projectBlock span {
+	background-color: #CFF09E;
+    width: 100%;
+    height: 0%;
+    
+    font-size: 10pt;
+    line-height: 60px;
+    
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    -moz-transition: all .4s;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.projectBlock:hover .imgBlock {
+	opacity: 0.6;
+    
+}
+
+.projectBlock:hover span {
+	bottom: 0;
+    height: 60px;
+    
+}
+
+
+/* -- -- Модальные окна -- -- */
+.modal {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	overflow: hidden;
+}
+
+.modalWindow {
+	text-align: center;
+	width: 80%;
+	height: 100%;
+    position: absolute;
+    left: 10%;
+	right: 10%;
+    
+}
+
+/* Крестик для закрытия */
+.modal span {
+	text-align: center;
+	font-size: 30pt;
+	cursor: pointer;
+	color: #ccc;
+	
+}
+
+/* Заголовок */
+.modalHeader {
+	margin-top: 2%;	
+	font-size: 24pt;
+	text-align: center;
+}
+
+/* Блок слайдера */
+.imageSlider {
+	margin-top: 1%;
+	margin-bottom: 1%;
+	
+	width: 100%;
+    height: 50%;
+	position: relative;
+	display: block;
+	
+}
+
+/* Картинка (со слайдером?) */
+.imageSlider img {
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto;
+    z-index: 12;
+}
+
+/* Блок со стрелками*/
+.arrows {
+	position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 15; 
+}
+
+.arrows p {
+	cursor: pointer;
+	font-size: 30pt;
+	text-shadow: 0 0 0.15em #bbb;
+}
+.leftArrow-deactive, .rightArrow-deactive {
+	color: #ccc;
+	opacity: 0.8;	
+}
+
+/* Левая стрелка */
+.leftArrow {
+	display: table-cell;
+    vertical-align: middle;    
+    text-align: left;     
+    padding-left: 1%;
+}
+
+/* Пространство между стрелками */
+.centerSpace {
+	display: table-cell;
+    width: 80%;
+}
+
+/* Правая стрелка */
+.rightArrow {
+	display: table-cell;
+    right: 0;
+    text-align: right;
+    vertical-align: middle;
+    padding-right: 1%;  
+}
+
+/* Текст описания */
+.modalContent {	
+	text-align: left;	
+}
+
+/* Ссылка в описании xD */
+.appLink {
+	display: none;
+}
+
+
+/* --- Контакты --- */
+a.socicon {
+	display: inline-block;
+	font-size: 80pt;
+	color: #999;
+	text-decoration: none;
+	margin-top: 1%;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+a.socicon i{
+	font-size: 80pt;
+}
+a.socicon:hover{
+	color: #0B486B;
+	/*color: #3B8686;*/
+}
+
+
+/* TEST */
+#scrollTopIndicator {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+}
+#scrollBottomIndicator {
+	position: fixed;
+	top: 25px;
+	left: 0;
+	z-index: 20;
+}
+/* TEST */
+
+
+/* -- -- Для мобил -- -- */
+
+@media only screen and (max-width: 600px) {
+    body {                
+    }
+    .content {
+    	max-width: 95%;
+
+    }
+    h3 { font-size: 18pt;}
+    p, ul { font-size: 13pt;}
+
+    .projectBlock {
+    	width: 250px;
+		height: 180px;		
+		margin: 2px 2px 2px 2px;
+    }
+
+    .imgBlock {
+    	line-height: 180px;
+    }
+
+    .projectBlock span {	    
+	    font-size: 8pt;
+	    line-height: 40px;
+	}
+
+	.projectBlock:hover span {	
+    	height: 40px;    
+	}
+
+	.modalHeader{
+		font-size: 18pt;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+    body {                
+    }
+    .content {
+    	max-width: 95%;
+    }
+
+    h3 { font-size: 16pt;}
+    p, ul { font-size: 11pt;}
+
+    .projectBlock {
+    	width: 250px;
+		height: 180px;		
+		margin: 2px 2px 2px 2px;
+    }
+
+    .imgBlock {
+    	line-height: 180px;
+    }
+
+    .projectBlock span {	    
+	    font-size: 8pt;
+	    line-height: 40px;
+	}
+
+	.projectBlock:hover span {	
+    	height: 40px;  
+	}
+
+    a.socicon {		
+		font-size: 60pt;		
+	}
+
+	a.socicon i{
+		font-size: 60pt;
+	}
+
+	.modalHeader{
+		font-size: 16pt;
+	}
+}

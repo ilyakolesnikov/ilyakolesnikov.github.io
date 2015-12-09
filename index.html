@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link href='https://fonts.googleapis.com/css?family=Lora&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+		<link rel='stylesheet' type='text/css' href='css/style.css'>
+
+		
+
+		<title>Портфолио Ильи К</title>
+	</head>
+	<body>	
+		<!--<p id='scrollTopIndicator'>0</p>
+		<p id='scrollBottomIndicator'>0</p>-->
+		<div id='navbar'>
+				<a class='navHref' id='aboutHref' href='#ancAbout'><i class="material-icons">&#xE851;</i></a>
+				<a class='navHref' id='projectsHref' href='#ancProjects'><i class="material-icons">&#xE86F;</i></a>					
+				<a class='navHref' id='contactsHref' href='#ancContacts'><i class="material-icons">&#xE0BE;</i></a>				
+		</div>
+
+		<div id='fullpage'>	
+			<p id='indicator'></p>							
+			
+			<span class="anchor" id="ancAbout"></span>
+			<div id='bgAbout' class='slide'>				
+				<div id='about' class='content'>
+					<h3>Обо мне</h3>
+					<p>Меня зовут Илья Колесников. Я занимаюсь программированием. Студент, учусь в МИРЭА на 4 курсе по специальности "Программная инженерия".<br/></p>
+					
+					<p><br/>Предпочитаемые языки программирования - Java, C++, JavaScript. Знаю следующие языки программирования и технологии: <br/>
+						- Java (+ Android) <br/>
+						- C++ (+ Qt, STL) <br/>
+						- JavaScript (+ jQuery) <br/>
+						- HTML 3, CSS 3 (+ Bootstrap 3) <br/>
+						- PHP 5<br/>
+						- SQL (MySql, SQLite) <br/>
+					</p>
+					
+				</div>								
+			</div>
+
+			<span class="anchor" id="ancProjects"></span>
+			<div id='bgProjects' class='slide'>
+				<div id='projects' class='content'>
+					<h3>Проекты</h3>
+					<div class='projectBlock' id='midiDrummer'>						
+						<div class="imgBlock">							
+							<img>
+						</div>
+						<span></span>						
+					</div>
+					<div class='projectBlock' id='lastFmMusicAdviser'>
+						<div class="imgBlock">							
+							<img>
+						</div>
+						<span></span>
+					</div>
+					<div class='projectBlock' id='musShop'>
+						<div class="imgBlock">							
+							<img>
+						</div>
+						<span></span>
+					</div>
+				</div>
+			</div>
+			
+			<span class="anchor" id="ancContacts"></span>
+			<div id='bgContacts' class='slide' >				
+				<div id='contacts' class='content'>
+					<h3>Контакты</h3>
+					<a href="http://vk.com/liquidbobr" target="_blank" class="socicon socicon-vkontakte" title='ВКонтакте'></a>	
+					<a href="https://github.com/ilyakolesnikov" target="_blank" class="socicon socicon-github" title='GitHub'></a>	
+					<a href="mailto:ilyaklqbr@yandex.ru" target="_blank" class="socicon"><i class="material-icons" title='Электронная почта'>&#xE0BE;</i></a>			
+				</div>
+			</div>
+		</div>
+		
+		<!-- Модальные окно -->
+		<div class='modal' id='modal'>
+			<div class='modalWindow'>
+				<span>X</span>			
+				<p class='modalHeader'></p>
+				<div class='imageSlider'>
+					<div class='arrows'>
+						<p class='leftArrow' href='#'><</p>
+						<div class='centerSpace'></div>
+						<p class='rightArrow' href='#'>></p>
+					</div>
+					<img>					
+				</div>							
+				<p class='modalContent'></p>				
+				<div class='appLink'>
+					<br>
+					<p>Ссылка на приложение - <a target='_blank'></a></p>					
+				</div>
+			</div>
+		</div>
+				
+		<script src='js/jquery-1.11.3.min.js'></script>		
+		<script src='js/script.js'></script>
+		<script src='js/imageSlider.js'></script>
+	</body>
+</html>
