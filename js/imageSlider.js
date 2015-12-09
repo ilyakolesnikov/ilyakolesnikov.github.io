@@ -65,6 +65,8 @@ function ImageSlider(id, header, content, imgSrcArray, link){
 			$('.appLink').css('display','block');
 			$('.appLink').children('p').children('a').text(link);
 			$('.appLink').children('p').children('a').attr('href',link);
+		} else {
+			$('.appLink').css('display','none');
 		}
 		
 		$('.rightArrow').click(function(){			
