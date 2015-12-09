@@ -2,9 +2,13 @@
 function ImageSlider(id, header, content, imgSrcArray, link){
 	var currentImageIndex = 0;
 	var activeArrowColor = '#555';
-	var deactiveArrowColor = '#ddd';
-		
+	var deactiveArrowColor = '#ddd';	
+
 	function checkArrows(){
+
+		$('.leftArrow').removeClass('leftArrow-deactive');
+		$('.rightArrow').removeClass('rightArrow-deactive');
+
 		if (imgSrcArray.length == 1){
 			$('.leftArrow').addClass('leftArrow-deactive');
 			$('.rightArrow').addClass('rightArrow-deactive');
@@ -51,6 +55,10 @@ function ImageSlider(id, header, content, imgSrcArray, link){
 		$('.modalWindow').children('.imageSlider').children('img')
 			.attr('src', imgSrcArray[currentImageIndex]);
 		$('.modalWindow').children('.modalContent').text(content);
+		
+		$('.leftArrow').unbind();
+		$('.rightArrow').unbind();
+		
 		checkArrows();
 		
 		if (link != undefined){
@@ -72,7 +80,6 @@ function ImageSlider(id, header, content, imgSrcArray, link){
 		if ($(window).height() > $(window).width()){
 			$('.imageSlider').css('height', '40%');
 		}
-
 		
 	}	
 	
