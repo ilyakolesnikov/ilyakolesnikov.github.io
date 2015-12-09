@@ -21,36 +21,43 @@ $(document).ready(function(){
 	}
 
 	var headerHeight = $('#navbar').height();
-	var slideHeight = $(window).height() - headerHeight;
+	var slideHeight;
 	var slides = ['#bgAbout', '#bgProjects', '#bgContacts'];
 	var navHrefs = ['#aboutHref', '#projectsHref', '#contactsHref'];	
 	var colors = ['red', 'green', 'blue'];
 	var slidesPos = [];
 	
+	function setSizes(){
+		slideHeight = $(window).height() - headerHeight;
+		/* -- Установка размеров окна и отступов чтобы все нор отображалось -- */
+		$('.slide').css('min-height', slideHeight);
+		$('#fullpage').css('margin-top', headerHeight);
+		$('.anchor').css('margin-top', -headerHeight);
+		$('.anchor').css('height', headerHeight);
 
-	/* -- Установка размеров окна и отступов чтобы все нор отображалось -- */
-	$('.slide').css('min-height', slideHeight);
-	$('#fullpage').css('margin-top', headerHeight);
-	$('.anchor').css('margin-top', -headerHeight);
-	$('.anchor').css('height', headerHeight);
+		/* -- Установка размера второго слайда, чтобы все нормально отображалось (размер окна + 100пксл на скроллы) -- */
+		if ($('#bgProjects').height() > slideHeight){
+			var h1 = $('#bgProjects').height();
+			//alert(h1);
+			var h2 = slideHeight;		
+			while (h2 <= h1)
+				h2 += 100;
+			h2 += 100;		
+					
+			$('#bgProjects').css('height', h2);
+		}
 
-	/* -- Установка размера второго слайда, чтобы все нормально отображалось (размер окна + 100пксл на скроллы) -- */
-	if ($('#bgProjects').height() > slideHeight){
-		var h1 = $('#bgProjects').height();
-		//alert(h1);
-		var h2 = slideHeight;		
-		while (h2 <= h1)
-			h2 += 100;
-		h2 += 100;		
-				
-		$('#bgProjects').css('height', h2);
+		/* -- Получение позиций слайдов -- */
+		for (var i = 0; i < navHrefs.length; i++){
+			var anc = $(navHrefs[i]).attr('href');
+			slidesPos[i] = $(anc).offset().top;		
+		}
 	}
+	setSizes();
 
-	/* -- Получение позиций слайдов -- */
-	for (var i = 0; i < navHrefs.length; i++){
-		var anc = $(navHrefs[i]).attr('href');
-		slidesPos[i] = $(anc).offset().top;		
-	}
+	$( window ).resize(function(){
+		setSizes();
+	});
 		
 	// Обработчик надатия на ссылку	
 	$('.navHref').click(function(){
