@@ -211,6 +211,9 @@ p, ul {
 	color: #ccc;
 	
 }
+.modal span:hover {	
+	color: #555;	
+}
 
 /* Заголовок */
 .modalHeader {

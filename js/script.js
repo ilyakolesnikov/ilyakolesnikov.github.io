@@ -35,17 +35,23 @@ $(document).ready(function(){
 		$('.anchor').css('margin-top', -headerHeight);
 		$('.anchor').css('height', headerHeight);
 
-		/* -- Установка размера второго слайда, чтобы все нормально отображалось (размер окна + 100пксл на скроллы) -- */
-		if ($('#bgProjects').height() > slideHeight){
-			var h1 = $('#bgProjects').height();
-			//alert(h1);
-			var h2 = slideHeight;		
-			while (h2 <= h1)
-				h2 += 100;
-			h2 += 100;		
-					
-			$('#bgProjects').css('height', h2);
+		// Фикс для моб. браузеров - увеличенный последний слайд
+		if ($(window).height() > $(window).width()) {
+			$("#bgAbout").css('min-height', slideHeight + headerHeight);
 		}
+
+		/* -- Установка размера второго слайда, чтобы все нормально отображалось (размер окна + 100пксл на скроллы) -- */
+		/*
+		 if ($('#bgProjects').height() > slideHeight){
+		 	var h1 = $('#bgProjects').height();
+			//alert(h1);
+		 	var h2 = slideHeight;		
+		 	while (h2 <= h1)
+		 		h2 += 100;
+		 	h2 += 100;		
+					
+		 	$('#bgProjects').css('height', h2);
+		 }*/
 
 		/* -- Получение позиций слайдов -- */
 		for (var i = 0; i < navHrefs.length; i++){
@@ -99,8 +105,8 @@ $(document).ready(function(){
 			setHrefActive(navHrefs[0]);
 			changeSlide($(navHrefs[0]).attr('href'));
 		}
-		// переход с второго на третий
-		else if (curHrefNum == 1 && scrollBottom > slidesPos[2]){
+		// переход с второго на третий (+ 100 - чтобы скроллилось до конца слайда, и только с конца слайда был переход)
+		else if (curHrefNum == 1 && scrollBottom >= (slidesPos[2] + 100)){
 			setHrefActive(navHrefs[2]);
 			changeSlide($(navHrefs[2]).attr('href'));
 		}
@@ -115,10 +121,6 @@ $(document).ready(function(){
 
 	// По умолчанию - первая страница
 	setHrefActive(navHrefs[0]);
-	changeSlide($(navHrefs[0]).attr('href'));
-	
-	
+	changeSlide($(navHrefs[0]).attr('href'));	
 	
 });
-
-

@@ -115,11 +115,20 @@ $(document).ready(function(){
 		['./img/screen_lastFmAdviser1.PNG', './img/screen_lastFmAdviser2.PNG'],
 		"http://ilyakolesnikov.github.io/Last.fm-Music-Adviser/");
 
-	var mD = new ImageSlider('#musShop', 'Музыкальный интернет-магазин',
+	var mS = new ImageSlider('#musShop', 'Музыкальный интернет-магазин',
 		"Вымышленный интерет-магазин музыкальных инструментов. Учебный проект. " +
 		"Реализована авторизация, динамическое обновление корзины, изменение каталога в " + 
 		"режиме администратора. Разработан на PHP5, JavaScript, HTML и CSS с использованием " + 
 		"jQuery и Bootstrap 3.",
 		['./img/screen_musShop1.PNG', './img/screen_musShop2.PNG', './img/screen_musShop3.PNG', './img/screen_musShop4.PNG']);
+
+	var pE = new ImageSlider('#photoEditor', 'HTML5 Photo Editor',
+		"Онлайн редактор изображений на HTML5 (canvas). " +
+		"Есть возможность обрезки изображения, регулировка яркости, контраста, насыщенности и цветового тона. " + 
+		"Реализован на HTML5/CSS3 и JavaScript с использованием jQuery, jQuery UI и Bootstrap 3. " + 
+		"Из-за особенностей политики безопасности CORS, ограничен выбор доменов с изображениями, " +
+		"поэтому используется только тестовое изображение.",
+		['./img/screen_photoEditor1.PNG', './img/screen_photoEditor2.PNG', './img/screen_photoEditor3.PNG'],
+		"http://ilyakolesnikov.github.io/photoEditorHTML5/");
 		
 });
